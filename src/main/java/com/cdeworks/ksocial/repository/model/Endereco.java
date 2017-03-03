@@ -1,8 +1,9 @@
-package com.cdeworks.ksocial.model;
+package com.cdeworks.ksocial.repository.model;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -25,6 +26,10 @@ public class Endereco {
 	
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
+	
+	@NotNull
+	@NotBlank
+	private String cep;
 
 	public TipoEndereco getTipoEndereco() {
 		return tipoEndereco;
@@ -72,6 +77,14 @@ public class Endereco {
 
 	public void setEstado(Estado estado) {
 		this.estado = estado;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
 }

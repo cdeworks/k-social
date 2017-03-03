@@ -1,4 +1,4 @@
-package com.cdeworks.ksocial.model;
+package com.cdeworks.ksocial.repository.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

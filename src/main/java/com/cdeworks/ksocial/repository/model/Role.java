@@ -1,4 +1,4 @@
-package com.cdeworks.ksocial.model;
+package com.cdeworks.ksocial.repository.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

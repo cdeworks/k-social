@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
-import com.cdeworks.ksocial.model.Associado;
 import com.cdeworks.ksocial.repository.dao.UserDAO;
+import com.cdeworks.ksocial.repository.model.Associado;
 
 @Repository
 public class UserDAOImpl implements UserDAO, UserDetailsService {
