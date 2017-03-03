@@ -7,7 +7,32 @@
 <head>
 </head>
 
+<body>
 
+	<section layout:fragment="menu">
+       <div th:include="~{layout/menu :: content}">placeholder for column1</div>
+    </section>	
+	<section layout:fragment="content">
+
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					Blank <small>empty</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Associados</a></li>
+					<li class="active">Novo</li>
+				</ol>
+			</section>
+
+	</section>
+	
+	<section layout:fragment="scripts">
+	
+	</section>
+</body>
 
 
 </html>

@@ -35,7 +35,7 @@ public class Associado implements UserDetails{
 	@NotNull
 	@Email
 	private String email;
-	
+		
 	@Embedded
 	private Endereco endereco;
 	

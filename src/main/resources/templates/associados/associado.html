@@ -5,9 +5,12 @@
 	layout:decorator="layout/layoutPadrao">
 
 <head>
+
+<link rel="stylesheet" th:href="@{plugins/datepicker/datepicker3.css}">
 </head>
 
 <body>
+	
 	<section layout:fragment="content">
 
 		<div class="content-wrapper">
@@ -26,180 +29,227 @@
 			<!-- Main content -->
 			<section class="content">
 				<form role="form">
-				
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box box-primary">
 								<div class="box-header with-border">
 									<h3 class="box-title">Dados Principais</h3>
 								</div>
-								
-									<div class="box-body">
-										<div class="row">
-												<div class="form-group col-md-6 col-xs-12">
-													<label for="nome">Nome</label>
-													<input type="text" class="form-control" id="nome" placeholder="Digite o nome">
-												</div>
-												<div class="form-group col-md-6 col-xs-12">
-													<label for="email">Email</label>
-													<input type="email" class="form-control" id="email" placeholder="Digite o email">
-												</div>
-											</div>
-										
-										
-										<div class="row">
-											<div class="form-group col-md-6 col-xs-12">
-												<label for="dataNascimento">Data de Nascimento</label> 
-												<input type="text" class="form-control" id="dataNascimento" placeholder="Digite data de Nascimento">
-											</div>
-											<div class="form-group col-md-6 col-xs-12">
-												<label for="senha">Senha</label> 
-												<input type="password" class="form-control" id="senha" placeholder="Digite Senha">
-											</div>
+
+								<div class="box-body">
+									<div class="row">
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="nome">Nome</label> <input type="text"
+												class="form-control" id="nome" placeholder="Digite o nome">
 										</div>
-										
-										<div class="row">
-											<div class="form-group col-md-6 col-xs-12">
-												 <label>Organização</label>
-								                  <select class="form-control ">
-								                    <option>Confederação Brasileira Kyokushinkaikan</option>
-								                    <option>Federação Paulista Karate Kyokushin</option>
-								                    <option>Federação Paranaense</option>
-								                    <option>Federação Mineira</option>
-								                    <option>Federação Matogrossense</option>
-								                  </select>
-											</div>
-											<div class="form-group col-md-6 col-xs-12">
-												 <label>Responsável</label>
-								                  <select class="form-control ">
-								                    <option>Sensei 1</option>
-								                    <option>Sensei 2</option>
-								                    <option>Sensei 3</option>
-								                    <option>Sensei 4</option>
-								                    <option>Sensei 5</option>
-								                  </select>
-											</div>
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="email">Email</label> <input type="email"
+												class="form-control" id="email" placeholder="Digite o email">
 										</div>
-										<div class="row">
-											<div class="form-group col-md-6 col-xs-12">
-												<label for="codigoMatricula">Código da Matrícula</label> 
-												<input type="text" class="form-control" id="codigoMatricula" placeholder="Digite código da matrícula">
-											</div>
-											<div class="form-group col-md-6 col-xs-12">
-							                  <label for="fotoPerfil">Foto do perfil</label>
-							                  <input type="file" id="fotoPerfil">
-							
-							                </div>
-										</div>
-	
 									</div>
-									
-									
-								
+
+
+									<div class="row">
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="dataNascimento">Data de Nascimento</label>
+											<div class="input-group date">
+												<input type="text" class="form-control datepicker"
+													readonly="readonly"> <span
+													class="input-group-addon"> <i class="fa fa-calendar"></i>
+												</span>
+											</div>
+
+										</div>
+
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="senha">Senha</label> <input type="password"
+												class="form-control" id="senha" placeholder="Digite Senha">
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="form-group col-md-6 col-xs-12">
+											<label>Organização</label> <select class="form-control ">
+												<option>Confederação Brasileira Kyokushinkaikan</option>
+												<option>Federação Paulista Karate Kyokushin</option>
+												<option>Federação Paranaense</option>
+												<option>Federação Mineira</option>
+												<option>Federação Matogrossense</option>
+											</select>
+										</div>
+										<div class="form-group col-md-6 col-xs-12">
+											<label>Responsável</label> <select class="form-control ">
+												<option>Sensei 1</option>
+												<option>Sensei 2</option>
+												<option>Sensei 3</option>
+												<option>Sensei 4</option>
+												<option>Sensei 5</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="codigoMatricula">Código da Matrícula</label> <input
+												type="text" class="form-control" id="codigoMatricula"
+												placeholder="Digite código da matrícula"
+												data-inputmask="'mask': ['9999999999']" data-mask
+												maxlength="10">
+										</div>
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="fotoPerfil">Foto do perfil</label> <input
+												type="file" id="fotoPerfil">
+
+										</div>
+									</div>
+
+								</div>
+
+
+
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box box-primary">
 								<div class="box-header with-border">
 									<h3 class="box-title">Documentos</h3>
 								</div>
-								
-									<div class="box-body">
-										<div class="row">
-												<div class="form-group col-md-6 col-xs-12">
-													<label for="rg">RG</label>
-													<input type="text" class="form-control" id="rg" placeholder="Digite o RG">
-												</div>
-												<div class="form-group col-md-6 col-xs-12">
-													<label for="cpf">CPF</label>
-													<input type="text" class="form-control" id="cpf" placeholder="Digite o cpf">
-												</div>
-											</div>
-										
-										
-	
+
+								<div class="box-body">
+									<div class="row">
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="rg">RG</label> <input type="text"
+												class="form-control" id="rg" placeholder="Digite o RG"
+												data-inputmask="'mask': ['99.999.999-#']" data-mask>
+										</div>
+										<div class="form-group col-md-6 col-xs-12">
+											<label for="cpf">CPF</label> <input type="text"
+												class="form-control" id="cpf" placeholder="Digite o cpf"
+												data-inputmask="'mask': ['999.999.999-99']" data-mask>
+										</div>
 									</div>
-								
+
+
+
+								</div>
+
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="box box-primary">
 								<div class="box-header with-border">
 									<h3 class="box-title">Endereço</h3>
 								</div>
-								
-									<div class="box-body">
-										<div class="row">
-												<div class="form-group col-md-2 col-xs-12">
-								                  <label>Tipo Endereço</label>
-								                  <select class="form-control ">
-								                    <option>Rua</option>
-								                    <option>Avenida</option>
-								                    <option>Alameda</option>
-								                    <option>Rodovia</option>
-								                    <option>Estrada</option>
-								                  </select>
-								                </div>
-												<div class="form-group col-md-5 col-xs-12">
-													<label for="logradouro">Logradouro</label>
-													<input type="text" class="form-control" id="logradouro" placeholder="Digite o Logradouro">
-												</div>
-												
-												<div class="form-group col-md-2 col-xs-12">
-													<label for="numero">Numero</label>
-													<input type="text" class="form-control" id="numero" placeholder="Digite o numero">
-												</div>
-												
-												<div class="form-group col-md-3 col-xs-12">
-													<label for="complemento">Complemento</label>
-													<input type="text" class="form-control" id="complemento" placeholder="Digite o complemento">
-												</div>
-											</div>
-										
-										
-										<div class="row">
-											<div class="form-group col-md-4 col-xs-12">
-												<label for="bairro">Bairro</label> 
-												<input type="text" class="form-control" id="bairro" placeholder="Digite o bairro">
-											</div>
-											<div class="form-group col-md-4 col-xs-12">
-												<label for="cidade">Cidade</label> 
-												<input type="text" class="form-control" id="cidade" placeholder="Digite a cidade">
-											</div>
-											<div class="form-group col-md-2 col-xs-12">
-							                  <label>Estado</label>
-							                  <select class="form-control ">
-							                    <option>SP</option>
-							                    <option>RJ</option>
-							                    <option>MG</option>
-							                    <option>SC</option>
-							                    <option>PR</option>
-							                  </select>
-							                </div>
-							                <div class="form-group col-md-2 col-xs-12">
-												<label for="cep">CEP</label> 
-												<input type="text" class="form-control" id="cep" placeholder="Digite o cep">
-											</div>
+
+								<div class="box-body">
+									<div class="row">
+										<div class="form-group col-md-2 col-xs-12">
+											<label>Tipo Endereço</label> <select class="form-control ">
+												<option>Rua</option>
+												<option>Avenida</option>
+												<option>Alameda</option>
+												<option>Rodovia</option>
+												<option>Estrada</option>
+											</select>
 										</div>
-										
-										
-	
+										<div class="form-group col-md-5 col-xs-12">
+											<label for="logradouro">Logradouro</label> <input type="text"
+												class="form-control" id="logradouro"
+												placeholder="Digite o Logradouro">
+										</div>
+
+										<div class="form-group col-md-2 col-xs-12">
+											<label for="numero">Numero</label> <input type="text"
+												class="form-control" id="numero"
+												placeholder="Digite o numero">
+										</div>
+
+										<div class="form-group col-md-3 col-xs-12">
+											<label for="complemento">Complemento</label> <input
+												type="text" class="form-control" id="complemento"
+												placeholder="Digite o complemento">
+										</div>
 									</div>
-								
+
+
+									<div class="row">
+										<div class="form-group col-md-4 col-xs-12">
+											<label for="bairro">Bairro</label> <input type="text"
+												class="form-control" id="bairro"
+												placeholder="Digite o bairro">
+										</div>
+										<div class="form-group col-md-4 col-xs-12">
+											<label for="cidade">Cidade</label> <input type="text"
+												class="form-control" id="cidade"
+												placeholder="Digite a cidade">
+										</div>
+										<div class="form-group col-md-2 col-xs-12">
+											<label>Estado</label> <select class="form-control ">
+												<option>SP</option>
+												<option>RJ</option>
+												<option>MG</option>
+												<option>SC</option>
+												<option>PR</option>
+											</select>
+										</div>
+										<div class="form-group col-md-2 col-xs-12">
+											<label for="cep">CEP</label> <input type="text"
+												class="form-control" id="cep" placeholder="Digite o cep">
+										</div>
+									</div>
+
+
+
+								</div>
+
+
 							</div>
+
 						</div>
+
+					</div>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">Salvar</button>
 					</div>
 				</form>
 			</section>
 			<!-- /.content -->
 		</div>
 		<!-- /.content-wrapper -->
+	</section>
+
+	<section layout:fragment="scripts">
+		<script th:src="@{plugins/input-mask/jquery.inputmask.js}"></script>
+		<script
+			th:src="@{plugins/input-mask/jquery.inputmask.date.extensions.js}"></script>
+		<script th:src="@{plugins/input-mask/jquery.inputmask.extensions.js}"></script>
+		<script th:src="@{plugins/datepicker/bootstrap-datepicker.js}"></script>
+		<script>
+		  $(function () {
+		    $('#mnuAssociado').addClass('active');
+		    $('#mnuCadastros').addClass('active');
+		    
+		    $("[data-mask]").inputmask();
+		    
+		
+		    //Date picker
+		    $('.input-group.date').datepicker({
+		    	
+		    	language: "pt-BR",
+		        keyboardNavigation: false,
+		        format: "dd/mm/yyyy",
+		        autoclose: true
+		    });
+		
+		  });
+		</script>
+
 	</section>
 </body>
 
