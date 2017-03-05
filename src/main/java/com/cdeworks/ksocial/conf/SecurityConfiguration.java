@@ -1,9 +1,9 @@
 package com.cdeworks.ksocial.conf;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,23 +23,44 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.passwordEncoder(new BCryptPasswordEncoder());
 	}
 
+	
+	public void configure(WebSecurity web) throws Exception {
+		
+		web.ignoring()
+			.antMatchers("/bootstrap/**")
+			.antMatchers("/dist/**")
+			.antMatchers("/plugins/**");
+	}
+	
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-			.antMatchers(HttpMethod.GET,"/home").hasRole("ADMIN")
 				.anyRequest()
 					.authenticated()
 				.and()
-					.formLogin() //.loginPage("/login")
-					.defaultSuccessUrl("/home")
+				.formLogin()
+					.loginPage("/login")
 					.permitAll()
 				.and()
-					.httpBasic()
+				.httpBasic()
 				.and()
-					.logout()
-						.logoutRequestMatcher(new	AntPathRequestMatcher("/logout"))
-				.and()
+				.logout()
+					.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+					.and()
 					.exceptionHandling()
 					.accessDeniedPage("/errors/403");
+		
+		
+		
+//				.and()
+//					.formLogin() //.loginPage("/login")
+//					.defaultSuccessUrl("/home")
+//					.permitAll()
+//				.and()
+//					.httpBasic()
+//				.and()
+//					.logout()
+//						.logoutRequestMatcher(new	AntPathRequestMatcher("/logout"))
+
 	}
 }
