@@ -1,7 +1,7 @@
 package com.cdeworks.ksocial.controller;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AuthController {
 
 	@RequestMapping("/login")
-	public String loginPage(@AuthenticationPrincipal User user) {
+	public String loginPage(Principal user) {
 		if(user != null) {
 			return "redirect:/home";
 		}
