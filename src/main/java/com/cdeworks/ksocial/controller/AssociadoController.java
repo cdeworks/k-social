@@ -1,7 +1,10 @@
 package com.cdeworks.ksocial.controller;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +21,12 @@ public class AssociadoController {
 		
 		return mav;
 		
+	}
+	
+	@PostMapping
+	public String salvar() {
+		System.out.println("Salvando Associado");
+		return null;
 	}
 
 }

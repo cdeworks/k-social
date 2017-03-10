@@ -47,6 +47,13 @@ public class Associado implements UserDetails{
 	
 	@ManyToMany(fetch =	FetchType.EAGER)
 	private List<Role> roles = new ArrayList<>();
+
+	@Temporal(TemporalType.DATE)
+	private Date dataCriacao;
+
+	@Temporal(TemporalType.DATE)
+	private Date dataAlteracao;
+	
 	
 	
 	@Override
@@ -118,6 +125,18 @@ public class Associado implements UserDetails{
 	}
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+	public Date getDataCriacao() {
+		return dataCriacao;
+	}
+	public void setDataCriacao(Date dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+	public Date getDataAlteracao() {
+		return dataAlteracao;
+	}
+	public void setDataAlteracao(Date dataAlteracao) {
+		this.dataAlteracao = dataAlteracao;
 	}
 
 	
